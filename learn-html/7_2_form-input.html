@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Input</title>
+  </head>
+  <body>
+    <form action="">
+      <!-- 데이터그룹핑 : <fieldset></fieldset> 사용 -->
+      <fieldset>
+        <legend>개인정보</legend>
+        <!-- 이름&나이 -->
+        <input type="text" />
+        <input type="text" />
+      </fieldset>
+      <fieldset>
+        <legend>사업자정보</legend>
+        <!-- 사업자명, 사업자등록번호 -->
+        <input type="text" />
+        <input type="text" />
+      </fieldset>
+    </form>
+    <form action="">
+      <fieldset>
+        <legend>input tag</legend>
+        <ul>
+          <li>
+            <label for="text">텍스트</label>
+            <!-- required 필수성 검사 -->
+            <input type="text" id="text" required />
+          </li>
+          <li>
+            <!-- email 속성 -> 자동으로 이메일 형식인지 검사해줌 -->
+            <label for="email">이메일</label>
+            <input type="email" id="email" />
+          </li>
+          <li>
+            <!-- tel 속성의 경우 숫자키패드가 자동으로 제공됨 -->
+            <label for="tel">전화번호</label>
+            <input type="tel" id="tel" />
+          </li>
+          <li>
+            <!-- url 속성은 자동으로 주소 형식인지 검사해줌 -->
+            <label for="url">url</label>
+            <input type="url" id="url" />
+          </li>
+          <li>
+            <!-- number - 숫자형식 검증 + 증감 버튼 자동생성 -->
+            <!-- min max 사용시 범위체크도 가능 -->
+            <label for="number">number</label>
+            <input type="number" id="number" min="5" max="10" />
+          </li>
+          <li>
+            <!-- range - min/max -->
+            <label for="range">range</label>
+            <input type="range" id="range" min="5" max="10" />
+          </li>
+          <li>
+            <!-- password 타입은 번호 감춤기능 제공 -->
+            <label for="password">비밀번호</label>
+            <input type="password" id="password" | />
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>날짜관련</legend>
+        <!-- ul은 목록 의미 -->
+        <ul>
+          <li>
+            <!-- date - min/max -->
+            <label for="date">날짜</label>
+            <input type="date" id="date" min="2021-07-15" max="2021-07-28" />
+          </li>
+          <li>
+            <!-- week - min/max -->
+            <label for="week">week</label>
+            <input type="week" id="week" />
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>시간관련</legend>
+        <ul>
+          <il>
+            <label for="time">time</label>
+            <input type="time" id="time" min="16:00" max="18:00" />
+          </il>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>그외</legend>
+        <ul>
+          <il>
+            <!-- 라벨이 없으니 id 도 필요x -->
+            <!-- multiple = 다중선택가능 -->
+            <input type="file" multiple />
+          </il>
+          <il>
+            <!-- 서버측으로 어떠한 정보를 제공할 때 사용 -->
+            <!-- ui 상으로는 표시되지 않음 -->
+            <input type="hidden" name="" value="" />
+          </il>
+        </ul>
+      </fieldset>
+      <input type="submit" value="제출하기" />
+    </form>
+  </body>
+</html>

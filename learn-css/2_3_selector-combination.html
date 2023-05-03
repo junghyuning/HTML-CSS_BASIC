@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>selector combination</title>
+    <style>
+      /* 자손결합자 */
+      /* section li {
+        color: blue;
+      }
+      section span {
+        color: red;
+      } */
+      /* 자식결합자 */
+      /* section>li : 작동x -> 바로 하위를 지정해야 함.*/
+      /* or [section>ul>li] */
+      ul > li {
+        color: darkgreen;
+      }
+
+      /* 일반형제결합자 */
+      /* p태그 다음에 나오는 "모든" span 태그 선택한 것. */
+      p ~ span {
+        color: red;
+      }
+
+      /* 인전형제결합자 */
+      /* p다음에 바로 붙어있는 code태그 선택 */
+      p + code {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>헬스</h1>
+      <hr />
+      <p>위키백과, 우리 모두의 사전</p>
+      <p>헬스(health)는 기본적으로 건강을 가리키며 그외에 다음을 가리킨다.</p>
+      <ul>
+        <li>의료</li>
+        <li>보건</li>
+        <li>체력(게이밍)</li>
+        <li>패션헬스(Fasion health)</li>
+        <li>헬스클럽(health club)</li>
+        <li>구글헬스 : <span>구글</span>이 제공하는 개인 의료정보 서비스</li>
+      </ul>
+    </section>
+    <hr />
+    <section>
+      <span>이건 빨강이 아닙니다</span>
+      <p>여기 문단이 있습니다.</p>
+      <code>여긴 코드가 있는 곳이에요</code>
+      <span>이제 빨강입니다.</span>
+      <code>코드가 있어요.</code>
+      <span>이것도 빨강 입니다.</span>
+    </section>
+  </body>
+</html>

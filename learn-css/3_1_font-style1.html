@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Font Style 1</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+      /* * {
+        margin: 0px;
+        padding: 0px;
+      } */
+      html {
+        /* 세리프를 적용하되, 없을시 >> monospace를 적용하도록 함. */
+        /* font-family: serif, monospace; */
+        font-family: 'Nanum Gothic', sans-serif;
+        font-size: 16px;
+      }
+      .title {
+        /* 색상표에 마우스 가져다 댄후, 헤더 클릭시, 다양한 색표현 방식 적용가능 */
+        /* rgb, 16진수, 등등 */
+        color: hsla(240, 59%, 65%, 0.667);
+        font-size: 29px;
+      }
+      .content {
+        font-size: 18px;
+      }
+      .font-italic {
+        font-style: italic;
+      }
+      .font-weight-bold {
+        font-weight: bold;
+      }
+      .font-weight-300 {
+        font-weight: 300;
+      }
+      .font-variant {
+        /* small-caps -> 소문자 >> 작은 대문자 */
+        font-variant: small-caps;
+      }
+      .subtitle {
+        font-size: 20px;
+      }
+
+      .subtitle-rem {
+        /* 루트 요소의 글꼴 크기 -> 최상위태그 -> 16px*/
+        /* 2rem = 32px */
+        font-size: 2rem;
+      }
+      .article {
+        font-size: 10px;
+      }
+      .subtitle-em {
+        /* 자기 사진의 크기를 기준으로 함 -> 부모인 article로 부터 10px 상속받았으므로 10px*/
+        /* 2em = 20px */
+        font-size: 2em;
+      }
+      /* rectangle과 width 클래스 요소를 가지고있는것 해당됨 */
+      .rectangle.width {
+        /* vw - 창 너비 비례 너비 */
+        /* width: 100vw; ->100%*/
+        /* 20vw = 20% */
+        width: 20vw;
+        height: 100px;
+        background-color: yellow;
+      }
+
+      .rectangle.height {
+        /* vh - 창 높이 비례 높이  */
+        height: 20vh;
+        weight: 100px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="title">junghyuning learn css</h2>
+    <p class="content">나날히 발전해가는 junghyuning 입니다.</p>
+    <p class="content font-weight-bold">
+      나날히 발전해가는 junghyuning 입니다.
+    </p>
+    <p class="content font-weight-300">나날히 발전해가는 junghyuning 입니다.</p>
+    <p class="content font-variant">HELLO, junghyuning!</p>
+
+    <hr />
+    <h2>px</h2>
+    <p class="subtitle">나날히 발전해가는 junghyuning 입니다.</p>
+    <h2>rem</h2>
+    <p class="subtitle-rem">나날히 발전해가는 junghyuning 입니다.</p>
+    <h2>em</h2>
+    <!-- div태그가 subtitle-em의 부모 태그 -->
+    <div class="article">
+      <p class="subtitle-em">나날히 발전해가는 junghyuning 입니다.</p>
+    </div>
+    <hr />
+    <!-- viewport width : 퍼센티지-->
+    <h2>vw</h2>
+    <div class="rectangle width"></div>
+    <!-- viewprot height -->
+    <h2>vh</h2>
+    <div class="rectangle height"></div>
+  </body>
+</html>

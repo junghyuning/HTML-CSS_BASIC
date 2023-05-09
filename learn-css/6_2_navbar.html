@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>navbar</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        /* 글자에 밑줄이 사라졌음 */
+        text-decoration: none;
+        list-style: none;
+      }
+      nav {
+        background-color: #34495e;
+        width: 100%;
+        height: 80px;
+      }
+      /* 자손결합자: nav li : 자손이면 가능 // 자식결합자 nav>ul : 바로 하위만 가능 */
+      nav li {
+        display: inline-block;
+        margin: 0 8px;
+        line-height: 80px;
+      }
+      nav a {
+        color: white;
+        font-size: 16px;
+        text-transform: uppercase;
+        padding: 10px;
+      }
+      /* a태그 중 active 속성?이 있는것 + hover : 마우스가 마우스오버 되는 영역 */
+      a.active,
+      a:hover {
+        border: 1px solid white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- nav태그는 시멘틱 태그로 의미가있는 태그라 외형적 변화는 없지만, 여러 장점이 있었음 -->
+    <nav>
+      <ul>
+        <li>
+          <!-- 클릭시 다른 페이지로 이동해야함 -> a태그 -->
+          <a href="#" class="active">Home</a>
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Contact </a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>

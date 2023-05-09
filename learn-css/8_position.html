@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position</title>
+    <style>
+      main,
+      section,
+      div,
+      article {
+        border: 3px solid black;
+        padding: 20px;
+      }
+
+      main {
+        max-width: 600px;
+        /* 상하여백은 0, 좌우여백은 자동맞춤 */
+        margin: 0 auto;
+        background-color: yellow;
+      }
+      section {
+        background-color: violet;
+        position: relative;
+      }
+      article {
+        background-color: cyan;
+      }
+      div {
+        background-color: white;
+      }
+      div.relative {
+        position: relative;
+        /* 상하좌우로 이동가능함. */
+        /* right: 100px;
+        top: 10px; */
+      }
+      div.absolute {
+        position: absolute;
+        background-color: grey;
+        /* 현재 absolute 태그의 부모는 body tag 이므로 body tag 기준으로 정렬됨. */
+        /* if 부모 tag 중 section을 position:relative; 설정시, section 기준으로 이동 */
+        left: 0px;
+      }
+      div.fixed {
+        /* 스크롤을 내려도 위치 고정 */
+        position: fixed;
+        background-color: blue;
+        bottom: 30px;
+        right: 30px;
+        border-radius: 50%;
+      }
+      div.sticky {
+        position: sticky;
+        /* top만 적용 가능. -> 스크롤시, 얼마나 떨어트려 놓을지*/
+        top: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      main
+      <section>
+        section
+        <article>
+          article
+          <!-- static = 일반적 흐름에 따라 배치 / 기본값 -->
+          <!-- relative 속성에서 사용하는 top,bottom,... 등은 비활성화돼있어 사용해도 움직이지 x -->
+          <div>static</div>
+          <!-- relative= 상대적 (top, left, right, bottom) / 흐름은 일반적 -->
+          <div class="relative">relative</div>
+          <!-- absolute : 일반적흐름 따르지 않음 / position: static 이 아닌 부모를 기준으로 움직임 -->
+          <div class="absolute">absolute</div>
+          <!-- fixed : 처음부터 고정된 위치 -->
+          <div class="fixed">fixed</div>
+          <!-- sticky : 처음에는 화면 이동을 따라가다가 스크롤이 시작되면 위치 고정됨. -->
+          <!-- 오로지top만 적용 가능. -->
+          <div class="sticky">sticky</div>
+          <div style="height: 1000px"></div>
+
+          <!-- cf. z-index : 아이템 배치시, 겹치는 아이템 있을 수 있음. 이때, 위로 보이게할 우선순위를 부여하는것.
+          숫자가 작을수록 우선순위가 높은 것이므로 위로 배치됨. -->
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

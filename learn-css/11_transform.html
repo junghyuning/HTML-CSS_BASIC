@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transform&Transition</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: lightgrey;
+      }
+      .outline,
+      .box {
+        width: 60px;
+        height: 60px;
+      }
+      .outline {
+        border: 3px solid yellow;
+        /* 정 중앙 -> margin: 0 auto; */
+        margin: 0 auto;
+        margin-top: 20px;
+      }
+      .box {
+        background-color: blue;
+      }
+      .box1 {
+        transform: translate(20px, 30px);
+      }
+      .box2 {
+        transform: scale(2, 0.5);
+      }
+      .box3 {
+        /* rotatex/rotatey/rotatez : x,y,z축 기준으로 회전 (입체) */
+        /* transform: rotatey(45deg); */
+        /* 그냥 rotate : 시계 방향 회전 */
+        transform: rotate(45deg);
+      }
+
+      /* 입체감을 주어 rotate 보기 쉽게 만들어 줌. */
+      .outline-box3 {
+        perspective: 50px;
+      }
+      .box4 {
+        /* skew : 왜곡 */
+        transform: skew(15deg, 20deg);
+      }
+
+      /* transition : 변화 / transition-property : 변화를 줄떄 부드럽게 변경 */
+      .box1 {
+        /* transition-property: width, height; */
+        /* all로 설정시 모든 변화를 자연스럽게(부드럽게) 적용함 */
+        transition-property: all;
+        transition-duration: 1s;
+        /* hover한 후 1초 후에 변화 시작. */
+        /* transition-delay: 1s; */
+        /* linear : 속도 일정 / ease-in : 점점 빠르게 / ease-out : 점점 느리게 */
+        transition-timing-function: ease-in;
+      }
+      .box1:hover {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+      }
+      .box4 {
+        /* width 2s : width에대한 변화가 2초간 일어남
+        if 그냥 시간만 적혀있을시? => default 로 all 적용 */
+        transition: width 2s;
+      }
+
+      .box4:hover {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outline">
+      <div class="box box1"></div>
+    </div>
+    <div class="outline">
+      <div class="box box2"></div>
+    </div>
+    <div class="outline outline-box3">
+      <div class="box box3"></div>
+    </div>
+    <div class="outline">
+      <div class="box box4"></div>
+    </div>
+  </body>
+</html>

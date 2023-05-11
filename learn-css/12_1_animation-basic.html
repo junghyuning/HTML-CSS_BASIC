@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- animation이란, 요소에 적용되는 css 스타일을 다른 css 스타일로 부드럽게 전환시켜주는 것. -->
+    <title>Animation Basic</title>
+    <style>
+      .shape {
+        margin: 0 auto;
+        margin-top: 80px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+
+      .animation1 {
+        animation-name: shape-color;
+        animation-duration: 3s;
+        /* 몇번 반복될지 지정  cf) infinite = 무한반복 */
+        animation-iteration-count: 3;
+      }
+      /* keyframe : 애니메이션 중, 변화의 중간 지점 즉, 변화의 중간 상태*/
+      @keyframes shape-color {
+        /* from=0% , to = 100% 로 표기 가능 */
+        from {
+          background-color: red;
+        }
+        50% {
+          background-color: yellow;
+        }
+        to {
+          background-color: blue;
+        }
+      }
+
+      .animation2 {
+        /* name, duration, iteration-count를 하나의 단축키로 사용할 수 있음 */
+        animation: circle 2s infinite;
+      }
+      @keyframes circle {
+        0% {
+          border-radius: 0;
+        }
+        50% {
+          border-radius: 50%;
+        }
+        100% {
+          border-radius: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <div class="shape animation1"></div>
+      <div class="shape animation2"></div>
+    </main>
+  </body>
+</html>

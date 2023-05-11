@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 접속하는 디바이스나 뷰포트에 따라 특정 CSS 스타일을 사용하는 방법 -->
+    <title>Media-Query</title>
+    <style>
+      /* width: 400px 조건의 경우, 너비가 "정확히" 400p만 백그라운드가 적용됨 -> 실효성 낮음
+    따라서 min-width : 400px -> 400px~ // max-width: 400px -> ~400px// 둘은 and로 연결하여 범위로 사용 가능 */
+      /*break point*/
+      @media (max-width: 600px) {
+        body {
+          background-color: red;
+        }
+      }
+      /* 겹치는 범위에 대해서는 아래에 정의된 값이 적용되므로 0~400은 blue 배경, 400~600은 red 배경이 적용 됨. */
+      @media (max-width: 400px) {
+        body {
+          background-color: blue;
+        }
+      }
+      @media (min-width: 601px) {
+        body {
+          background-color: yellow;
+        }
+      }
+      /* 인쇄화면에서 적용되는 스타일 : @media print */
+      @media print {
+        h1 {
+          font-size: 120px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>안녕하세요</h1>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
+      quaerat? Reiciendis, illum magnam, libero harum soluta, quam sed facilis
+      maiores quos culpa consequatur in atque placeat voluptas quas.
+      Voluptatibus, esse! Ratione consequuntur nihil aperiam obcaecati eos
+      voluptatem fugiat nemo? Ea eligendi iure cumque dicta non aspernatur
+      laboriosam error? Iste amet sapiente libero error nobis corrupti
+      dignissimos corporis ipsam odio perferendis? Error vel, maxime, recusandae
+      quae voluptatum labore temporibus quasi officiis fugit laborum vero illo
+      perspiciatis. Repudiandae ullam cupiditate praesentium. Sint atque odio
+      sequi maxime asperiores! Est suscipit dignissimos repudiandae perferendis.
+      Accusamus beatae alias deleniti ipsum! Assumenda fugit, perspiciatis cum
+      maxime nobis quos porro eos vitae! Odit quidem eos eum fugiat non,
+      architecto velit sequi nisi ad quia est exercitationem rerum. Natus
+      dolores officiis ex deleniti quaerat explicabo cum perferendis dicta
+      placeat voluptates nesciunt ducimus sit iure inventore itaque vitae
+      cupiditate asperiores magni harum ratione ipsum molestiae, amet
+      reprehenderit fugit. Dicta.
+    </p>
+  </body>
+</html>

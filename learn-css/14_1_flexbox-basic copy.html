@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlexBox Basic</title>
+    <style>
+      * {
+        margine: 0;
+        padding: 0;
+      }
+      .flex-container {
+        background-color: green;
+        height: 100vh;
+        display: flex;
+        /* flex-direction: row;
+        flex-wrap: wrap; */
+        /* 아래처럼 flex-flow 단축ㄱ을 사용해 표현하여도 결과값은 같게 출력 됨 */
+        flex-flow: row wrap;
+      }
+      .flex-item {
+        color: white;
+        width: 60px;
+        height: 60px;
+        background-color: purple;
+        text-align: center;
+        border: 1px solid yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <!-- 아래 아이템들 배치 하고 싶다면? -> container 스타일에 flex넣어줌  -->
+      <div class="flex-item">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+      <div class="flex-item">4</div>
+      <div class="flex-item">5</div>
+      <div class="flex-item">6</div>
+      <div class="flex-item">7</div>
+      <div class="flex-item">8</div>
+      <div class="flex-item">9</div>
+      <div class="flex-item">10</div>
+      <div class="flex-item">11</div>
+      <div class="flex-item">12</div>
+      <div class="flex-item">13</div>
+      <div class="flex-item">14</div>
+      <div class="flex-item">15</div>
+    </div>
+  </body>
+</html>

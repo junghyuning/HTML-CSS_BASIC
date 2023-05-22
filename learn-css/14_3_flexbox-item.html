@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlexBox Container</title>
+    <style>
+      * {
+        margine: 0;
+        padding: 0;
+      }
+      .flex-container {
+        background-color: green;
+        height: 100vh;
+        display: flex;
+      }
+      .flex-item {
+        color: white;
+        width: 60px;
+        height: 60px;
+        background-color: purple;
+        text-align: start;
+        border: 1px solid yellow;
+      }
+      /* order : 순서 설정  /  
+      flex-grow : 너비 팽창 -> 기본값 : 0  /  
+      flex- shrink : 너비 축소 -> 기본값 1 (0부여시 원래 너비로 돌아감) 
+      flex-basis : 너비의 기본값을 수치로 지정
+      flex : flex- grow shrink basis 의 단축키*/
+      /* align-self : 개별적으로 수직 정렬 */
+      .item1 {
+        /* order: 4; */
+        /* flex-grow: 2; */
+        /* flex-basis: 160px; */
+        /* flex: 2 2 auto; */
+        align-self: flex-end;
+      }
+      .item2 {
+        /* order: 3; */
+        /* flex-grow: 1; */
+        /* flex-basis: 50%; */
+        /* flex: 1 1 auto; */
+        align-self: center;
+      }
+      .item3 {
+        /* order: 2;
+        flex-grow: 1; */
+        /* flex-basis: 20vw; */
+      }
+      .item4 {
+        /* order: 1;
+        flex-grow: 1; */
+      }
+      .item5 {
+        /* order: 0;
+        flex-grow: 1; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <!-- .flex-item.item${$} -> flex-itme과 item$라는 2가지의 클래스 이름을 가진 디브태그 생성 -->
+      <div class="flex-item item1">1</div>
+      <div class="flex-item item2">2</div>
+      <div class="flex-item item3">3</div>
+      <div class="flex-item item4">4</div>
+      <div class="flex-item item5">5</div>
+    </div>
+  </body>
+</html>
